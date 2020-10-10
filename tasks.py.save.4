@@ -1,0 +1,38 @@
+from datetime import datetime
+import argparse
+
+class Task:
+    def __init__(self, What, When, Obs):
+        self.what = What
+        self.when = datetime.strptime(When, "%d/%m/%Y")
+        self.countdown = self.when - datetime.today()
+        self.obs = Obs
+
+secult_es = Task("Edital Secult", "30/09/2020", "https://prosas.com.br/editais/6063-instrucao-normativa-0012020-projeto-cultural-rubem-braga-2020?locale=en")
+udesc = Task("Edital UDESC", "23/09/2020", "f")
+ufabc = Task("Edital UFABC", "23/10/2020", "file:///tmp/mozilla_pasoneto0/Edital_046.2020_-_Doutorado.pdf")
+max_plank = Task('Max Planck - Elke B. Lange & Lauren K. Fink', "01/10/2020", 'https://www.aesthetics.mpg.de/en/career/jobs/researcher-phd-candidate.html')
+avaliador = Task("Edital avaliador SC", "16/10/2020", "https://prosas.com.br/editais/7854-edital-de-avaliadores-premio-nodgi-pellizzetti-de-incentivo-a-cultura-de-rio-do-sulsc-2020?locale=en")
+
+secult = [secult_es.what, secult_es.countdown, secult_es.obs, "----------------------------------------------------------------------------------------------------"]
+udesc = [udesc.what, udesc.countdown, udesc.obs, "----------------------------------------------------------------------------------------------------"]
+ufabc = [ufabc.what, ufabc.countdown, ufabc.obs, "----------------------------------------------------------------------------------------------------"]
+max_plank = [max_plank.what, max_plank.countdown, max_plank.obs, "----------------------------------------------------------------------------------------------------"]
+avaliador = [avaliador.what, avaliador.countdown, avaliador.obs, "----------------------------------------------------------------------------------------------------"]
+
+tarefas = [secult, udesc, ufabc, max_plank, avaliador]
+
+for k in tarefas:
+    for j in k:
+        print(j)
+
+#def main():
+#    parser = argparse.ArgumentParser(description='Process some integers.')
+#    parser.add_argument('--add')
+#    args = vars(parser.parse_args())
+#    if 'add' in args:
+#        print(f"mandou add {args['add']}")
+
+
+#if __name__ == '__main__':
+#    main()

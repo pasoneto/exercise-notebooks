@@ -1,0 +1,27 @@
+from datetime import datetime
+
+class Task:
+    def __init__(self, What, When, Obs):
+        
+        self.what = What
+        self.when = datetime.strptime(When, "%d/%m/%Y")
+        self.countdown = self.when - datetime.today()
+        self.obs = Obs
+
+secult_es = Task("Edital Secult", "30/09/2020", "https://prosas.com.br/editais/6063-instrucao-normativa-0012020-projeto-cultural-rubem-braga-2020?locale=en")
+
+udesc = Task("Edital UDESC", "23/09/2020", "https://www.udesc.br/arquivos/ceart/id_cpmenu/8825/Edital_PS_004_2020_15996881459411_8825.pdf")
+
+ufabc = Task("Edital UFABC", "23/10/2020", "file:///tmp/mozilla_pasoneto0/Edital_046.2020_-_Doutorado.pdf")
+
+file:///tmp/mozilla_pasoneto0/Edital_046.2020_-_Doutorado.pdf
+
+secult = [secult_es.what, secult_es.countdown, secult_es.obs, "----------------------------------------------------------------------------------------------------"]
+udesc = [udesc.what, udesc.countdown, udesc.obs, "----------------------------------------------------------------------------------------------------"]
+ufabc = [ufabc.what, ufabc.countdown, ufabc.obs, "----------------------------------------------------------------------------------------------------"]
+
+tarefas = [secult, udesc, ufabc]
+
+for k in tarefas:
+    for j in k:
+        print(j)
